@@ -27,3 +27,15 @@
     scrollbar-width: thin;
   }
 }
+
+/* Prevent iOS Safari from auto-zooming when focusing a text field.
+   Mobile Safari zooms in whenever an input's font-size is < 16px, so we bump
+   text-entry controls to 16px below the `sm` breakpoint only (desktop keeps
+   the smaller sizing). We never disable pinch-zoom (accessibility). */
+@media (max-width: 639.98px) {
+  input:not([type='checkbox']):not([type='radio']),
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
+}
